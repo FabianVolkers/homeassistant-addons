@@ -17,7 +17,7 @@ ports_description:
   8554/udp: "Receive udp stream from GoPro camera"
   18554/udp: "Access RTSP Stream over udp"
   18554/tcp: "Access RTSP Stream over tcp"
-host_network: false
+host_network: true
 apparmor: false
 init: false
 # image: FabianVolkers/homeassistant-addon-gopro
