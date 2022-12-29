@@ -1,0 +1,23 @@
+name: "GoPro"
+version: "0.0.1"
+slug: "gopro"
+description: >-
+  "Add on for receiving a GoPro camera stream and making it available via RTSP."
+arch:
+  - amd64
+url: "https://github.com/FabianVolkers/homeassistant-addons"
+# ingress: true
+# ingress_port: 8554
+# ingress_stream: true
+ports:
+  8554/udp: 8544
+  18554/udp: 18554
+  18554/tcp: 18554
+ports_description:
+  8554/udp: "Receive udp stream from GoPro camera"
+  18554/udp: "Access RTSP Stream over udp"
+  18554/tcp: "Access RTSP Stream over tcp"
+host_network: false
+apparmor: false
+init: false
+# image: FabianVolkers/homeassistant-addon-gopro

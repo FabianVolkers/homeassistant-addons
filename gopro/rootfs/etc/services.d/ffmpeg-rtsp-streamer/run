@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Start the example service
+# s6-overlay docs: https://github.com/just-containers/s6-overlay
+# ==============================================================================
+
+# Add your code here
+
+## Print the message the user supplied, defaults to "Hello World..."
+bashio::log.info "Starting rtsp-stream"
+
+## Run your program
+# exec python3 /app/rtsp.py
+exec ffmpeg -fflags nobuffer -f:v mpegts -probesize 8192 -i "udp://127.0.0.1:8555?overrun_nonfatal=1&fifo_size=50000000" -vcodec libx264 -acodec aac -f rtsp rtsp://127.0.0.1:18554/fabis-gopro.stream
