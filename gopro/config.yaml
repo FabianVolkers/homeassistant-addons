@@ -20,4 +20,4 @@ ports_description:
 host_network: true
 apparmor: false
 init: false
-# image: FabianVolkers/homeassistant-addon-gopro
+image: ghcr.io/FabianVolkers/homeassistant-addon-gopro
